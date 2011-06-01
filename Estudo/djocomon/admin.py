@@ -1,6 +1,7 @@
 from django.contrib import admin
-import models
+from djocomon.models import Chamado, Secao
 
 
-admin.site.register(models.Chamado)
-admin.site.register(models.Secao)
+admin.site.register(Chamado)
+admin.site.register(Secao)
+
