@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for Estudo project.
 
 DEBUG = True
@@ -94,11 +95,23 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+# adicione esta linha para abilitar a internacionalizacao
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+
+)
+
+
+USE_I18N = True
+
+ugettext = lambda s: s
+LANGUAGES = (
+    ('en', u'English'),
+    ('pt-br', u'Português Brasileiro'),
 )
 
 ROOT_URLCONF = 'Estudo.urls'
